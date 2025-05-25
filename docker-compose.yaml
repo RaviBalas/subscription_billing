@@ -1,0 +1,43 @@
+services:
+  backend:
+    container_name: "subscription_billing_backend"
+    build:
+      context: .
+    command: bash -c "python manage.py migrate --noinput && python manage.py collectstatic --noinput && python -m gunicorn --bind 0.0.0.0:8080 --workers 1 core.wsgi:application"
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8080"
+    depends_on:
+      - db
+      - redis
+  main_queue:
+    container_name: "subscription_billing_main_queue"
+    build:
+      context: .
+    command: "celery  -A core worker --loglevel=INFO --autoscale=1,1  -Q main_queue -B"
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+  db:
+    container_name: "subscription_billing_postgres_db"
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: dev_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data2
+  redis:
+    container_name: "subscription_billing_redis"
+    image: redis
+    ports:
+      - "6380:6379"
+volumes:
+  postgres_data:

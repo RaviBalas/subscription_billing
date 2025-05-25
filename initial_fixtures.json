@@ -1,0 +1,205 @@
+[
+  {
+    "model": "django_celery_beat.intervalschedule",
+    "pk": 1,
+    "fields": {
+      "every": 1,
+      "period": "days"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 1,
+    "fields": {
+      "minute": "0",
+      "hour": "4",
+      "day_of_month": "*",
+      "month_of_year": "*",
+      "day_of_week": "*",
+      "timezone": "Asia/Kolkata"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 2,
+    "fields": {
+      "minute": "0",
+      "hour": "0",
+      "day_of_month": "*",
+      "month_of_year": "*",
+      "day_of_week": "*",
+      "timezone": "Asia/Kolkata"
+    }
+  },
+  {
+    "model": "django_celery_beat.crontabschedule",
+    "pk": 3,
+    "fields": {
+      "minute": "0",
+      "hour": "0",
+      "day_of_month": "1",
+      "month_of_year": "*",
+      "day_of_week": "*",
+      "timezone": "Asia/Kolkata"
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 1,
+    "fields": {
+      "name": "celery.backend_cleanup",
+      "task": "celery.backend_cleanup",
+      "interval": null,
+      "crontab": 1,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": 43200,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2025-05-24T14:13:12.878Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 2,
+    "fields": {
+      "name": "generate_invoices",
+      "task": "generate_invoices",
+      "interval": null,
+      "crontab": 3,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 36,
+      "date_changed": "2025-05-24T14:11:29.971Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 3,
+    "fields": {
+      "name": "mark_overdue_unpaid_invoice",
+      "task": "mark_overdue_unpaid_invoice",
+      "interval": null,
+      "crontab": 2,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2025-05-24T14:23:18.901Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "django_celery_beat.periodictask",
+    "pk": 4,
+    "fields": {
+      "name": "send_reminder_email",
+      "task": "send_reminder_email",
+      "interval": null,
+      "crontab": 2,
+      "solar": null,
+      "clocked": null,
+      "args": "[]",
+      "kwargs": "{}",
+      "queue": null,
+      "exchange": null,
+      "routing_key": null,
+      "headers": "{}",
+      "priority": null,
+      "expires": null,
+      "expire_seconds": null,
+      "one_off": false,
+      "start_time": null,
+      "enabled": true,
+      "last_run_at": null,
+      "total_run_count": 0,
+      "date_changed": "2025-05-24T14:23:18.901Z",
+      "description": ""
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$MPGqYPXK21gZ7TFG0mYxyc$AOFPIEeH0j3kE7vAzOoECWG1MMpAjjD0pzCSowmR0xs=",
+      "last_login": "2025-05-24T09:48:03.805Z",
+      "is_superuser": true,
+      "email": "admin@admin.com",
+      "is_staff": true,
+      "first_name": "ravi",
+      "last_name": "kumar",
+      "is_active": true,
+      "date_joined": "2025-05-24T09:47:46.206Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "subscription.plans",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-05-24T09:38:58.814Z",
+      "updated_at": "2025-05-24T09:38:58.814Z",
+      "name": "Basic",
+      "price": 10000
+    }
+  },
+  {
+    "model": "subscription.plans",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-05-24T09:38:58.814Z",
+      "updated_at": "2025-05-24T09:38:58.814Z",
+      "name": "Pro",
+      "price": 20000
+    }
+  },
+  {
+    "model": "subscription.plans",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-05-24T09:38:58.814Z",
+      "updated_at": "2025-05-24T09:38:58.814Z",
+      "name": "Enterprise",
+      "price": 30000
+    }
+  }
+]
